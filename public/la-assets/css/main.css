@@ -372,7 +372,7 @@ a {
   }
 }
 
-#main_wrapper .flash-message .alert {
+.flash-message .alert {
   font-size: 21px;
   text-align: center;
   font-weight: bold;
@@ -380,7 +380,7 @@ a {
   border: initial;
 }
 
-#main_wrapper .flash-message .alert .close {
+.flash-message .alert .close {
   text-decoration: initial;
   color: #ffffff;
   opacity: 1;
