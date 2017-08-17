@@ -94,12 +94,34 @@
             </div>
         </div>
     </div> <!--/ .container -->
+
+    {!! Form::open(['action' => 'LA\ScootersController@store', 'id' => 'scooter-add-form']) !!}
+            <div class="modal-body">
+                <div class="box-body">
+                    @la_form($module)
+                    
+                    {{--
+                    @la_input($module, 'name')
+                    @la_input($module, 'email')
+                    @la_input($module, 'model')
+                    @la_input($module, 'frame_serial_no')
+                    @la_input($module, 'motor_serial_no')
+                    @la_input($module, 'frame_color')
+                    @la_input($module, 'date')
+                    --}}
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                {!! Form::submit( 'Submit', ['class'=>'btn btn-success']) !!}
+            </div>
+            {!! Form::close() !!}
 </div><!--/ #headerwrap -->
 
 <div id="c">
     <div class="container">
         <p>
-            <strong>Copyright &copy; 2016. Powered by <a href="https://dwijitsolutions.com"><b>Dwij IT Solutions</b></a>
+            <strong>Copyright &copy; <?php echo date("Y")?>. Powered by <a href="javascript:void(0)"><b>{{ config('app.devteam') }}</b></a>
         </p>
     </div>
 </div>

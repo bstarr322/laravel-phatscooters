@@ -53,8 +53,8 @@ class ScootersController extends Controller
 				'module' => $module
 			]);
 		} else {
-            return redirect(config('laraadmin.adminRoute')."/");
-        }
+      return redirect(config('laraadmin.adminRoute')."/");
+  	}
 	}
 
 	/**
