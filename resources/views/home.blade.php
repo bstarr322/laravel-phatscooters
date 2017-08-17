@@ -21,7 +21,7 @@
     <title>{{ LAConfigs::getByKey('sitename') }}</title>
 
     <link href="//fonts.googleapis.com/css?family=Montserrat:300,400,700,900" rel="stylesheet" type="text/css">
-    
+
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('/la-assets/css/bootstrap.css') }}" rel="stylesheet">
 
@@ -162,6 +162,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                <h2>Register Your Scooter:</h2>
                 {!! Form::open(['action' => 'LA\ScootersController@store', 'id' => 'scooter-add-form']) !!}
                     <div class="box-body">
                         <div class="form-group"><label for="name">Name* :</label><input class="form-control" placeholder="Enter Name" data-rule-minlength="5" data-rule-maxlength="255" required="1" name="name" type="text" value="John Doe"></div>
