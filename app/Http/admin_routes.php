@@ -26,8 +26,8 @@ Route::group(['as' => $as, 'middleware' => ['auth', 'permission:ADMIN_PANEL']], 
 	
 	/* ================== Dashboard ================== */
 	
-	Route::get(config('laraadmin.adminRoute'), 'LA\DashboardController@index');
-	Route::get(config('laraadmin.adminRoute'). '/dashboard', 'LA\DashboardController@index');
+	Route::get(config('laraadmin.adminRoute'), 'LA\ScootersController@index');
+	// Route::get(config('laraadmin.adminRoute'). '/dashboard', 'LA\DashboardController@index');
 	
 	/* ================== Users ================== */
 	Route::resource(config('laraadmin.adminRoute') . '/users', 'LA\UsersController');
