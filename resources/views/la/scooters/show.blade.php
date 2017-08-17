@@ -110,6 +110,7 @@
 						@la_display($module, 'name')
 						@la_display($module, 'email')
 						@la_display($module, 'model')
+						@la_display($module, 'order_number')
 						@la_display($module, 'frame_serial_no')
 						@la_display($module, 'motor_serial_no')
 						@la_display($module, 'frame_color')

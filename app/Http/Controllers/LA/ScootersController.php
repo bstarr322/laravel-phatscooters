@@ -23,7 +23,7 @@ class ScootersController extends Controller
 {
 	public $show_action = true;
 	public $view_col = 'date';
-	public $listing_cols = ['id', 'name', 'email', 'model', 'frame_serial_no', 'motor_serial_no', 'frame_color', 'date'];
+	public $listing_cols = ['id', 'name', 'email', 'model', 'order_number', 'frame_serial_no', 'motor_serial_no', 'frame_color', 'date'];
 	
 	public function __construct() {
 		// Field Access of Listing Columns
@@ -53,8 +53,8 @@ class ScootersController extends Controller
 				'module' => $module
 			]);
 		} else {
-      return redirect(config('laraadmin.adminRoute')."/");
-  	}
+            return redirect(config('laraadmin.adminRoute')."/");
+        }
 	}
 
 	/**

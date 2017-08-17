@@ -36,6 +36,7 @@
 					@la_input($module, 'name')
 					@la_input($module, 'email')
 					@la_input($module, 'model')
+					@la_input($module, 'order_number')
 					@la_input($module, 'frame_serial_no')
 					@la_input($module, 'motor_serial_no')
 					@la_input($module, 'frame_color')

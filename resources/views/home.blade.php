@@ -19,6 +19,8 @@
     <meta name="twitter:creator" content="@laraadmin" />
     
     <title>{{ LAConfigs::getByKey('sitename') }}</title>
+
+    <link href="//fonts.googleapis.com/css?family=Montserrat:300,400,700,900" rel="stylesheet" type="text/css">
     
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('/la-assets/css/bootstrap.css') }}" rel="stylesheet">
@@ -52,9 +54,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#home" class="smoothScroll">Home</a></li>
-                <li><a href="#about" class="smoothScroll">About</a></li>
-                <li><a href="#contact" class="smoothScroll">Contact</a></li>
+                <li class="hide active"><a href="#home" class="smoothScroll">Home</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
@@ -68,55 +68,145 @@
     </div>
 </div>
 
+<!-- HEADER -->
+<header>
+    <!-- HEADER TOP BANNER    -->
+    <div class="header-banner">
+        <div class="container">
+            <div class="row">
+                <div class="hidden-xs col-md-7 col-1">
+                    <p class="title">Questions? Call us at 866-972-6687</p>
+                </div>
+                <div class="col-xs-12 col-md-6 col-2">
+                    <p class="desc">Ride Now, Pay Later! Financing Available.</p>
+                    <div class="header_cart">
+                        <a href="/cart"><span class="hidden-xs">Checkout</span><i class="material-icons-shopping_cart"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container hide">
+        <div class="header_top">
+            <!-- USER MENU -->
+            <ul class="header_user">
+                <li><a href="/account/login">My account</a></li>
+                <li class="wishlist"><a href="">Wishlist</a></li>
+                <li class="checkout"><a href="/cart">Checkout</a></li>
+            </ul>
+        </div>
+        <div class="header_bottom">
+            <!-- LOGO -->
+            <div id="logo" class="logo_main">
+                <a href="http://electric.phatscooters.com/home/">
+                    <img src="//cdn.shopify.com/s/files/1/1796/0271/t/11/assets/logo.png?8545831465477433450" alt="Phat Scooters" />
+                    <script>var pixelRatio=window.devicePixelRatio?window.devicePixelRatio:1,attr1x=$("#logo img").attr("src").replace(".png","@2x.png");$(window).on("load",function(){pixelRatio>1&&$("#logo img").attr("src",attr1x).attr("width","194px")});</script>
+                </a>
+            </div>
+            <!-- HEADER SEARCH -->
+            <div class="header_search">
+                <form action="/search" method="get" class="search_form">
+                    <input id="search-field" name="q" type="text" placeholder="Search store" class="hint" />
+                    <button id="search-submit" type="submit"><i class="material-icons-search"></i></button>
+                </form>
+            </div>
+            <!-- HEADER CART -->
+            <div class="header_cart">
+                <a href="/cart"><i class="material-icons-shopping_cart"></i><span id="cart_items">0</span><span class="item_txt">item(s)</span></a>
+            </div>
+        </div>
+    </div>
+</header>
 
-<section id="home" name="home"></section>
-<div id="headerwrap">
+<div id="megamenu">
     <div class="container">
-        <div class="row centered">
-            <div class="col-lg-12">
-                <h1>{{ LAConfigs::getByKey('sitename_part1') }} <b><a>{{ LAConfigs::getByKey('sitename_part2') }}</a></b></h1>
-                <h3>{{ LAConfigs::getByKey('site_description') }}</h3>
-                <h3><a href="{{ url('/login') }}" class="btn btn-lg btn-success">Get Started!</a></h3><br>
-            </div>
-            <div class="col-lg-2">
-                <h5>Amazing Functionalities</h5>
-                <p>for Modern Admin Panels</p>
-                <img class="hidden-xs hidden-sm hidden-md" src="{{ asset('/la-assets/img/arrow1.png') }}">
-            </div>
-            <div class="col-lg-8">
-                <img class="img-responsive" src="{{ asset('/la-assets/img/app-bg.png') }}" alt="">
-            </div>
-            <div class="col-lg-2">
-                <br>
-                <img class="hidden-xs hidden-sm hidden-md" src="{{ asset('/la-assets/img/arrow2.png') }}">
-                <h5>Completely Packaged...</h5>
-                <p>for Future expantion of Modules</p>
+        <div id="logo" class="logo_main">
+            <a href="http://electric.phatscooters.com/home/">
+                <img src="//cdn.shopify.com/s/files/1/1796/0271/t/11/assets/logo.png?8545831465477433450" alt="Phat Scooters" class="" />
+                <script>var pixelRatio=window.devicePixelRatio?window.devicePixelRatio:1,attr1x=$("#logo img").attr("src").replace(".png","@2x.png");$(window).on("load",function(){pixelRatio>1&&$("#logo img").attr("src",attr1x).attr("width","194px")});</script>
+            </a>
+        </div>
+        <h2 id="megamenu_mobile_toggle"><span>Scooters</span><i></i></h2>
+        <ul class="level_1">
+            <li class="level_1_item ">
+                <a class="level_1_link " href="http://electric.phatscooters.com/home/">
+                Home
+                </a>
+            </li>
+            <li class="level_1_item ">
+                <a class="level_1_link active" href="/collections/scooters">
+                SCOOTERS
+                </a>
+            </li>
+            <li class="level_1_item ">
+                <a class="level_1_link " href="/collections/accessories">
+                Accessories
+                </a>
+            </li>
+            <li class="level_1_item ">
+                <a class="level_1_link " href="http://electric.phatscooters.com/videos/">
+                VIDEOS
+                </a>
+            </li>
+            <li class="level_1_item ">
+                <a class="level_1_link " href="/pages/contact-us">
+                Contact us
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div id="main_wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                {!! Form::open(['action' => 'LA\ScootersController@store', 'id' => 'scooter-add-form']) !!}
+                    <div class="box-body">
+                        <div class="form-group"><label for="name">Name* :</label><input class="form-control" placeholder="Enter Name" data-rule-minlength="5" data-rule-maxlength="255" required="1" name="name" type="text" value="John Doe"></div>
+                        <div class="form-group"><label for="email">Email* :</label><input class="form-control" placeholder="Enter Email" data-rule-maxlength="256" required="1" data-rule-email="true" name="email" type="email" value="example@email.com"></div>
+                        <div class="form-group">
+                            <label for="model">Model* :</label>
+                            <select class="form-control" required="1" data-placeholder="Enter Model" rel="select2" name="model">
+                                <option value="Phatty Original">Phatty Original</option>
+                                <option value="Phatty Sport">Phatty Sport</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" name="_token_61" value="<?php echo csrf_token() ?>">
+                            <label for="order_number">Order Number* :</label>
+                            <input class="form-control" placeholder="Enter Order Number" data-rule-maxlength="256" data-rule-unique="true" field_id="61" adminroute="admin" row_id="0" required="1" name="order_number" type="text" value="" aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="frame_serial_no">Frame Serial Number* :</label>
+                            <input class="form-control" placeholder="Enter Frame Serial Number" data-rule-maxlength="256" required="1" name="frame_serial_no" type="text" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="motor_serial_no">Motor Serial Number* :</label>
+                            <input class="form-control" placeholder="Enter Motor Serial Number" data-rule-maxlength="256" required="1" name="motor_serial_no" type="text" value="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="frame_color">Frame Color :</label>
+                            <select class="form-control" data-placeholder="Enter Frame Color" rel="select2" name="frame_color">
+                                <option value="Matte Black">Matte Black</option>
+                                <option value="White">White</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date">Date* :</label>
+                            <div class='input-group date'><input class="form-control" placeholder="Enter Date" required="1" name="date" type="text" value=""><span class='input-group-addon'><span class='fa fa-calendar'></span></span></div>
+                        </div>
+                    </div>
+                    {!! Form::submit( 'Submit', ['class'=>'btn btn-success']) !!}
+                {!! Form::close() !!}
             </div>
         </div>
     </div> <!--/ .container -->
 
-    {!! Form::open(['action' => 'LA\ScootersController@store', 'id' => 'scooter-add-form']) !!}
-            <div class="modal-body">
-                <div class="box-body">
-                    @la_form($module)
-                    
-                    {{--
-                    @la_input($module, 'name')
-                    @la_input($module, 'email')
-                    @la_input($module, 'model')
-                    @la_input($module, 'frame_serial_no')
-                    @la_input($module, 'motor_serial_no')
-                    @la_input($module, 'frame_color')
-                    @la_input($module, 'date')
-                    --}}
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                {!! Form::submit( 'Submit', ['class'=>'btn btn-success']) !!}
-            </div>
-            {!! Form::close() !!}
-</div><!--/ #headerwrap -->
+</div><!--/ #main_wrapper -->
 
 <div id="c">
     <div class="container">
@@ -131,6 +221,7 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="{{ asset('/la-assets/js/bootstrap.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/la-assets/js/home.js') }}" type="text/javascript"></script>
 <script>
     $('.carousel').carousel({
         interval: 3500
