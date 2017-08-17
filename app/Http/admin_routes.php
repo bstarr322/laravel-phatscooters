@@ -71,7 +71,9 @@ Route::group(['as' => $as, 'middleware' => ['auth', 'permission:ADMIN_PANEL']], 
 	Route::post(config('laraadmin.adminRoute') . '/create_backup_ajax', 'LA\BackupsController@create_backup_ajax');
 	Route::get(config('laraadmin.adminRoute') . '/downloadBackup/{id}', 'LA\BackupsController@downloadBackup');
 
-	/* ================== Scooters ================== */
-	Route::resource(config('laraadmin.adminRoute') . '/scooters', 'LA\ScootersController');
-	Route::get(config('laraadmin.adminRoute') . '/scooter_dt_ajax', 'LA\ScootersController@dtajax');
+	
 });
+
+/* ================== Scooters ================== */
+Route::resource(config('laraadmin.adminRoute') . '/scooters', 'LA\ScootersController');
+Route::get(config('laraadmin.adminRoute') . '/scooter_dt_ajax', 'LA\ScootersController@dtajax');

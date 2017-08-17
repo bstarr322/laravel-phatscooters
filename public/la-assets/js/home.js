@@ -76,5 +76,28 @@ jQuery(function($){
       $(".level_1").slideUp("slow");
       $(".megamenu_mobile").find("h2").removeClass("active");
     });
-  }; 
+  };
+  
+  $('.carousel').carousel({
+    interval: 3500
+  });
+
+  /* ================= Default Select2 ================= */
+  $("[rel=select2]").select2({
+      
+  });
+  $("[rel=taginput]").select2({
+      tags: true,
+      tokenSeparators: [',']
+  });
+  
+  /* ================= bootstrap-datetimepicker ================= */
+  $(".input-group.date").datetimepicker({
+      format: 'DD/MM/YYYY'
+  });
+  
+  $(".input-group.datetime").datetimepicker({
+      format: 'DD/MM/YYYY LT',
+      sideBySide: true
+  });
 });

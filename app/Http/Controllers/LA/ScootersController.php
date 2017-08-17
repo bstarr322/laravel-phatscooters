@@ -53,8 +53,8 @@ class ScootersController extends Controller
 				'module' => $module
 			]);
 		} else {
-            return redirect(config('laraadmin.adminRoute')."/");
-        }
+      return redirect(config('laraadmin.adminRoute')."/");
+    }
 	}
 
 	/**
@@ -75,10 +75,11 @@ class ScootersController extends Controller
 	 */
 	public function store(Request $request)
 	{
-		if(Module::hasAccess("Scooters", "create")) {
-		
+
+		if ($request->input('home_submit') == 'true' ) {
+
 			$rules = Module::validateRules("Scooters", $request);
-			
+				
 			$validator = Validator::make($request->all(), $rules);
 			
 			if ($validator->fails()) {
@@ -86,11 +87,30 @@ class ScootersController extends Controller
 			}
 			
 			$insert_id = Module::insert("Scooters", $request);
+
+			$request->session()->flash('alert-success', 'Your scooter has been registered :)');
 			
-			return redirect()->route(config('laraadmin.adminRoute') . '.scooters.index');
-			
+			return redirect()->to('/');
+
 		} else {
-			return redirect(config('laraadmin.adminRoute')."/");
+
+			if(Module::hasAccess("Scooters", "create")) {
+			
+				$rules = Module::validateRules("Scooters", $request);
+				
+				$validator = Validator::make($request->all(), $rules);
+				
+				if ($validator->fails()) {
+					return redirect()->back()->withErrors($validator)->withInput();
+				}
+				
+				$insert_id = Module::insert("Scooters", $request);
+				
+				return redirect()->route(config('laraadmin.adminRoute') . '.scooters.index');
+				
+			} else {
+				return redirect(config('laraadmin.adminRoute')."/");
+			}
 		}
 	}
 

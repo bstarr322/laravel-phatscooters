@@ -42,7 +42,9 @@ return [
     'url' => env('APP_URL', 'http://localhost'),
 
     'devteam' => 'StarSoft Solutions',
-    
+
+    'shop_url'  => 'https://phatscooters.com',
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone

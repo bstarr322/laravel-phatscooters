@@ -1,14 +1,13 @@
 
 body {
   background-color: #f2f2f2;
-    font-family: "Lato";
-    font-weight: 300;
-    font-size: 16px;
-    color: #555;
-    padding-top: 50px;
+  font-family: "Lato";
+  font-weight: 300;
+  font-size: 16px;
+  color: #555;
 
-    -webkit-font-smoothing: antialiased;
-    -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Titles */
@@ -298,7 +297,7 @@ a {
   transition: background 0.3s ease-in-out,border-color 0.3s ease-in-out,color 0.3s ease-in-out;
 }
 
-label {
+#main_wrapper label {
   margin-top: 0px;
   font-family: Montserrat;
   font-weight: bold;
@@ -308,7 +307,7 @@ label {
   color: #000;
 }
 
-input {
+#main_wrapper input {
   background-color: #fff;
   color: #000;
   box-shadow: inset 0px 2px 3px #dddddd;
@@ -321,18 +320,41 @@ input {
   padding-left: 14px;
   padding-right: 14px;
 }
-input[type=submit] {
+#main_wrapper  input[type=submit] {
   width: 150px;
   height: 50px;
   float: right;
   font-size: 16px;
   border: initial;
+  background-color: rgba(0,150,251,1);
+  color: #fff;
+  box-shadow: initial;
 }
-h2 {
+#main_wrapper h2 {
   font-size: 28px;
   color: rgb(0, 0, 0);
   text-align: center;
 }
+
+#main_wrapper span.select2-selection {
+  box-shadow: inset 0px 2px 3px #dddddd;
+  -webkit-box-shadow: inset 0px 2px 3px #dddddd;
+  -moz-box-shadow: inset 0px 2px 3px #dddddd;
+  border-radius: 5px;
+  font-size: 15px;
+  line-height: 15px;
+  height: 43px;
+  padding-left: 14px;
+  padding-right: 14px;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 41px;
+}
+
 
 /* Media Query */
 @media (max-width: 991px) {
@@ -348,4 +370,18 @@ h2 {
       display: flex;
       align-items: center;
   }
+}
+
+#main_wrapper .flash-message .alert {
+  font-size: 21px;
+  text-align: center;
+  font-weight: bold;
+  margin: initial;
+  border: initial;
+}
+
+#main_wrapper .flash-message .alert .close {
+  text-decoration: initial;
+  color: #ffffff;
+  opacity: 1;
 }

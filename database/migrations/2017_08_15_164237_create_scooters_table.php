@@ -18,10 +18,10 @@ class CreateScootersTable extends Migration
     public function up()
     {
         Module::generate("Scooters", 'scooters', 'date', 'fa-trophy', [
-            ["name", "Name", "Name", false, "John Doe", 5, 255, true],
+            ["name", "Name", "Name", false, "John Doe", 0, 255, true],
             ["email", "Email", "Email", false, "example@email.com", 0, 256, true],
             ["model", "Model", "Dropdown", false, "", 0, 256, true, ["Phatty Original","Phatty Sport"]],
-            ["order_number", "Order Number", "TextField", true, "", 0, 256, true],
+            ["order_number", "Order Number", "String", true, "", 0, 256, true],
             ["frame_serial_no", "Frame Serial Number", "String", false, "", 0, 256, true],
             ["motor_serial_no", "Motor Serial Number", "String", false, "", 0, 256, true],
             ["frame_color", "Frame Color", "Dropdown", false, "", 0, 256, false, ["Matte Black","White"]],

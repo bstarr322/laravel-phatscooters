@@ -16,17 +16,14 @@ use Datatables;
 use Collective\Html\FormFacade as Form;
 use Dwij\Laraadmin\Models\Module;
 use Dwij\Laraadmin\Models\ModuleFields;
-use Dwij\Laraadmin\Helpers\LAHelper;
-use Zizaco\Entrust\EntrustFacade as Entrust;
 
-use App\Permission;
-use App\Role;
+use App\Models\Permission;
 
 class PermissionsController extends Controller
 {
 	public $show_action = true;
 	public $view_col = 'name';
-	public $listing_cols = ['id', 'name', 'display_name'];
+	public $listing_cols = ['id', 'name', 'display_name', 'description'];
 	
 	public function __construct() {
 		// Field Access of Listing Columns
@@ -112,14 +109,11 @@ class PermissionsController extends Controller
 				$module = Module::get('Permissions');
 				$module->row = $permission;
 				
-				$roles = Role::all();
-				
 				return view('la.permissions.show', [
 					'module' => $module,
 					'view_col' => $this->view_col,
 					'no_header' => true,
-					'no_padding' => "no-padding",
-					'roles' => $roles
+					'no_padding' => "no-padding"
 				])->with('permission', $permission);
 			} else {
 				return view('errors.404', [
@@ -140,10 +134,11 @@ class PermissionsController extends Controller
 	 */
 	public function edit($id)
 	{
-		if(Module::hasAccess("Permissions", "edit")) {
+		if(Module::hasAccess("Permissions", "edit")) {			
 			$permission = Permission::find($id);
-			if(isset($permission->id)) {
-				$module = Module::get('Permissions');				
+			if(isset($permission->id)) {	
+				$module = Module::get('Permissions');
+				
 				$module->row = $permission;
 				
 				return view('la.permissions.edit', [
@@ -250,40 +245,5 @@ class PermissionsController extends Controller
 		}
 		$out->setData($data);
 		return $out;
-	}
-	
-	/**
-	 * Save the  permissions for role in permission view.
-	 *
-	 * @param  int  $id
-	 * @return Redirect to permisssions page
-	 */
-	public function save_permissions(Request $request, $id)
-	{
-		if(Entrust::hasRole('SUPER_ADMIN')) {
-			$permission = Permission::find($id);
-			$module = Module::get('Permissions');
-			$module->row = $permission;
-			$roles = Role::all();
-			
-			foreach ($roles as $role) {
-				$permi_role_id = 'permi_role_'.$role->id;
-				$permission_set = $request->$permi_role_id;
-				if(isset($permission_set)) {
-					$query = DB::table('permission_role')->where('permission_id', $id)->where('role_id', $role->id);
-					if($query->count() == 0) {
-						DB::insert('insert into permission_role (permission_id, role_id) values (?, ?)', [$id, $role->id]);
-					}
-				} else {
-					$query = DB::table('permission_role')->where('permission_id', $id)->where('role_id', $role->id);
-					if($query->count() > 0) {
-						DB::delete('delete from permission_role where permission_id = "'.$id.'" AND role_id = "'.$role->id.'" ');
-					}
-				}
-			}
-			return redirect(config('laraadmin.adminRoute') . '/permissions/'.$id."#tab-access");
-		} else {
-			return redirect(config('laraadmin.adminRoute')."/");
-		}
 	}
 }

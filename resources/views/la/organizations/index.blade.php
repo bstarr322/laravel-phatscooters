@@ -1,7 +1,7 @@
 @extends("la.layouts.app")
 
 @section("contentheader_title", "Organizations")
-@section("contentheader_description", "organizations listing")
+@section("contentheader_description", "Organizations listing")
 @section("section", "Organizations")
 @section("sub_section", "Listing")
 @section("htmlheader_title", "Organizations Listing")
