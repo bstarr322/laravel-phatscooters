@@ -187,7 +187,7 @@
                         <div class="form-group">
                             <input type="hidden" name="_token_61" value="<?php echo csrf_token() ?>">
                             <label for="order_number">Order Number* :</label>
-                            <input class="form-control" placeholder="Enter Order Number" data-rule-maxlength="256" data-rule-unique="true" field_id="61" adminroute="admin" row_id="0" required="1" name="order_number" type="text" value="" aria-required="true">
+                            <input class="form-control" placeholder="Enter Order Number" data-rule-maxlength="256" field_id="61" adminroute="admin" row_id="0" required="1" name="order_number" type="text" value="" aria-required="true">
                         </div>
                         <div class="form-group">
                             <label for="frame_serial_no">Frame Serial Number* :</label>
