@@ -45,8 +45,7 @@ class ScootersController extends Controller
 	public function index()
 	{
 		$module = Module::get('Scooters');
-		
-		if(Module::hasAccess($module->id)) {
+		if( Auth::check() && Module::hasAccess($module->id) ) {
 			return View('la.scooters.index', [
 				'show_actions' => $this->show_action,
 				'listing_cols' => $this->listing_cols,
@@ -83,18 +82,18 @@ class ScootersController extends Controller
 			$validator = Validator::make($request->all(), $rules);
 			
 			if ($validator->fails()) {
-				return redirect()->back()->withErrors($validator)->withInput();
+				return redirect()->to('/')->withErrors($validator)->withInput();
 			}
 			
 			$insert_id = Module::insert("Scooters", $request);
 
 			$request->session()->flash('alert-success', 'Your scooter has been registered :)');
-			
+
 			return redirect()->to('/');
 
 		} else {
 
-			if(Module::hasAccess("Scooters", "create")) {
+			if( Auth::check() && Module::hasAccess("Scooters", "create")) {
 			
 				$rules = Module::validateRules("Scooters", $request);
 				
@@ -122,7 +121,7 @@ class ScootersController extends Controller
 	 */
 	public function show($id)
 	{
-		if(Module::hasAccess("Scooters", "view")) {
+		if( Auth::check() && Module::hasAccess("Scooters", "view")) {
 			
 			$scooter = Scooter::find($id);
 			if(isset($scooter->id)) {
@@ -154,7 +153,7 @@ class ScootersController extends Controller
 	 */
 	public function edit($id)
 	{
-		if(Module::hasAccess("Scooters", "edit")) {			
+		if( Auth::check() && Module::hasAccess("Scooters", "edit")) {			
 			$scooter = Scooter::find($id);
 			if(isset($scooter->id)) {	
 				$module = Module::get('Scooters');
@@ -185,7 +184,7 @@ class ScootersController extends Controller
 	 */
 	public function update(Request $request, $id)
 	{
-		if(Module::hasAccess("Scooters", "edit")) {
+		if( Auth::check() && Module::hasAccess("Scooters", "edit")) {
 			
 			$rules = Module::validateRules("Scooters", $request, true);
 			
@@ -212,7 +211,7 @@ class ScootersController extends Controller
 	 */
 	public function destroy($id)
 	{
-		if(Module::hasAccess("Scooters", "delete")) {
+		if( Auth::check() && Module::hasAccess("Scooters", "delete")) {
 			Scooter::find($id)->delete();
 			
 			// Redirecting to index() method
