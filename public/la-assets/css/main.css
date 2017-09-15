@@ -42,7 +42,7 @@ a {
 
 a:hover,
 a:focus {
-    color: #c0392b;
+    color: #0096fb;
     text-decoration: none;
     outline: 0;
 }
@@ -65,6 +65,9 @@ a:after {
     padding: 0;
 }
 
+ul li {
+  list-style: none;
+}
 
 /* ==========================================================================
    Wrap Sections
@@ -181,66 +184,10 @@ font-size: 16px;
 
 
 /* Mega Menu */
-#megamenu {
-  background: #000;
-  height: 60px;
-  position: relative;
-  z-index: 999;
-}
 
-#megamenu .container {
-    display: flex;
-    align-items: center;
-}
-
-#megamenu .container #logo {
-    flex: 2;
-    margin-right: 15px;
-}
-
-#megamenu .container #logo img {
-    height: 20px;
-    width: auto;
-    object-fit: contain;
-}
-
-#megamenu.megamenu_desktop h2 {
-    display: none;
-}
-
-#megamenu.megamenu_mobile h2 i {
-    position: absolute;
-    right: 0;
-    top: 0;
-    color: #fff;
-}
-#megamenu.megamenu_desktop .level_1 {
-    position: relative;
-    margin: initial;
-}
-#megamenu.megamenu_desktop .level_1_item {
-    float: left;
-    list-style: none;
-}
 #megamenu .level_1_link {
   font-weight: 400;
 }
-
-#megamenu.megamenu_desktop .level_1_link {
-    height: 60px;
-    display: block;
-    font-size: 16px;
-    line-height: 60px;
-    text-transform: uppercase;
-    position: relative;
-    color: #fff;
-    padding: 0px 20px;
-    font-family: Montserrat;
-}
-#megamenu.megamenu_desktop .level_1_item:hover {
-    background: #0096fb;
-}
-
 #megamenu.megamenu_mobile .level_1 {
     width: 100%;
     position: absolute;
@@ -253,9 +200,7 @@ font-size: 16px;
     margin: 0 auto;
     padding: initial;
 }
-#megamenu .level_2_wrap, #megamenu.megamenu_mobile .level_1_item {
-    background: #fff;
-}
+
 #megamenu.megamenu_mobile .level_1_item {
     border-top: 1px solid rgba(0,0,0,0.15);
     list-style: none;
@@ -270,6 +215,141 @@ font-size: 16px;
     font-family: Montserrat;
 }
 
+#megamenu {
+    height: 60px;
+    position: relative;
+    z-index: 999
+}
+#megamenu.megamenu_desktop h2 {
+    display: none
+}
+#megamenu.megamenu_desktop .level_1 {
+    position: relative;
+    margin: initial;
+}
+#megamenu.megamenu_desktop .level_1_item {
+    float: left;
+    list-style: none;
+}
+#megamenu.megamenu_desktop .level_1_item:hover {
+    background: #0096fb
+}
+#megamenu.megamenu_desktop .level_1_item ~ .level_1_item {
+    margin: 0 0 0 0px
+}
+#megamenu.megamenu_desktop .level_1_link {
+    height: 60px;
+    display: block;
+    font-size: 16px;
+    line-height: 60px;
+    text-transform: uppercase;
+    position: relative;
+    color: #fff;
+    padding: 0px 20px;
+    font-family: Montserrat
+}
+#megamenu.megamenu_desktop .level_1_item.sfHover .level_1_link,
+#megamenu.megamenu_desktop .level_1_link.active {
+    background: #0096fb
+}
+#megamenu.megamenu_desktop .menu_badge {
+    height: 16px;
+    display: block;
+    padding: 0 3px;
+    background: #fff;
+    font-size: 12px;
+    line-height: 14px;
+    color: #777;
+    position: absolute;
+    left: 20px;
+    top: 5px;
+    text-transform: lowercase
+}
+#megamenu.megamenu_desktop .level_2_small__wrap {
+    position: relative
+}
+#megamenu.megamenu_desktop .level_2_wrap {
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    top: 65px;
+    display: none;
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2)
+}
+#megamenu.megamenu_desktop .level_2_small a {
+    color: #000;
+    white-space: nowrap;
+    font-size: 15px;
+    line-height: 32px
+}
+
+#megamenu.megamenu_desktop .level_2_small a:hover,
+#megamenu.megamenu_desktop .level_2_small a:focus {
+    color: #0096fb;
+}
+#megamenu.megamenu_desktop .level_2_big {
+    width: 100%;
+    padding: 20px 10px
+}
+#megamenu.megamenu_desktop .level_2_big .column_item {
+    width: 25%;
+    float: left;
+    padding: 0 10px
+}
+#megamenu.megamenu_desktop .level_2_big .level_2_blog .column_item {
+    width: 33.33333333333333%
+}
+#megamenu.megamenu_desktop .level_2_big .level_2_blog .column_item .blog_info {
+    margin-top: 10px
+}
+#megamenu.megamenu_desktop .level_2_big .level_2_blog .column_item .blog_info .blog_btn {
+    margin-top: 15px
+}
+#megamenu.megamenu_desktop .level_2_products .column_item .product_info {
+    margin-top: 15px
+}
+#megamenu.megamenu_desktop .level_2_products .column_item .product_info .product_name {
+    line-height: 22px
+}
+#megamenu.megamenu_desktop .level_2_products .column_item .product_info .product_name a {
+    font-size: 17px
+}
+#megamenu.megamenu_desktop .level_2_products .column_item .product_info .product_price {
+    margin-top: 15px
+}
+#megamenu.megamenu_desktop .level_2_products .column_item .product_info .product_price .money {
+    font-weight: bold;
+    font-size: 22px
+}
+#megamenu.megamenu_desktop .level_2_products .column_item .product_info .product_price .compare-at-price {
+    font-weight: 500;
+    font-size: 14px;
+    display: block;
+    margin-top: 10px;
+    color: #fd6c6c
+}
+#megamenu.megamenu_desktop .level_2_trigger {
+    margin: 0
+}
+#megamenu.megamenu_desktop .level_3 {
+    margin-top: 20px
+}
+#megamenu.megamenu_desktop .level_3 li a {
+    font-size: 15px;
+    line-height: 32px;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
+}
+#megamenu.megamenu_mobile .container {
+    position: relative
+}
 #megamenu.megamenu_mobile h2 {
     height: 50px;
     display: block;
@@ -282,16 +362,171 @@ font-size: 16px;
     text-overflow: ellipsis;
     cursor: pointer;
     position: relative;
-    color: #fff;
+    color: #fff
+}
+@media (max-width: 767px) {
+    #megamenu.megamenu_mobile h2 span {
+        display: none
+    }
+}
+#megamenu.megamenu_mobile h2 i {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff
 }
 #megamenu.megamenu_mobile h2 i:before {
     content: '\f107';
     font: 30px/49px "FontAwesome";
-    color: #fff;
+    color: #fff
 }
 #megamenu.megamenu_mobile h2.active i:before {
-    content: '\f106';
+    content: '\f106'
 }
+#megamenu.megamenu_mobile .menu_badge {
+    display: none
+}
+
+#megamenu.megamenu_mobile .level_1_link .level_1_trigger {
+    display: block;
+    margin: -15px 0 0 0;
+    font: 30px/1em "FontAwesome";
+    position: absolute;
+    right: 15px;
+    top: 50%
+}
+#megamenu.megamenu_mobile .level_1_link .level_1_trigger:before {
+    content: '\f107'
+}
+#megamenu.megamenu_mobile .level_1_link .level_1_trigger.active:before {
+    content: '\f106'
+}
+#megamenu.megamenu_mobile .level_2_wrap {
+    display: none
+}
+#megamenu.megamenu_mobile .level_3 {
+    display: none
+}
+#megamenu.megamenu_mobile .level_2_small {
+    text-transform: uppercase;
+    padding: initial;
+}
+#megamenu.megamenu_mobile .level_2_small li {
+    border-top: 1px solid rgba(0, 0, 0, 0.15)
+}
+#megamenu.megamenu_mobile .level_2_small a {
+  color: #000;
+  display: block;
+  padding: 8px 40px 8px 30px;
+  font-size: 14px;
+  line-height: 1.2em
+}
+#megamenu.megamenu_mobile .level_2_links {
+    text-transform: uppercase
+}
+#megamenu.megamenu_mobile .level_2_links li {
+    border-top: 1px solid rgba(0, 0, 0, 0.15)
+}
+#megamenu.megamenu_mobile .level_2_links a {
+    display: block;
+    padding: 8px 40px 8px 45px;
+    font-size: 14px;
+    line-height: 1.2em
+}
+#megamenu.megamenu_mobile .level_2_trigger {
+    margin: 0;
+    padding: 8px 30px;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.2em;
+    position: relative;
+    cursor: pointer
+}
+#megamenu.megamenu_mobile .level_2_trigger i {
+    display: block;
+    margin: -15px 0 0 0;
+    font: 30px/1em "FontAwesome";
+    position: absolute;
+    right: 15px;
+    top: 50%
+}
+#megamenu.megamenu_mobile .level_2_trigger i:before {
+    content: '\f107'
+}
+#megamenu.megamenu_mobile .level_2_trigger.active i:before {
+    content: '\f106'
+}
+#megamenu.megamenu_mobile .level_2_products .column_item {
+    overflow: hidden;
+    padding: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.15)
+}
+#megamenu.megamenu_mobile .level_2_products .product_img {
+    width: 140px;
+    float: left
+}
+#megamenu.megamenu_mobile .level_2_products .product_info {
+    margin: 0 0 0 160px
+}
+#megamenu.megamenu_mobile .level_2_blog .column_item {
+    overflow: hidden;
+    padding: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.15)
+}
+#megamenu.megamenu_mobile .level_2_blog .item_with_img .blog_img {
+    width: 140px;
+    float: left
+}
+#megamenu.megamenu_mobile .level_2_blog .item_with_img .blog_info {
+    margin: 0 0 0 160px
+}
+#megamenu.megamenu_mobile .level_2_blog .blog_title {
+    margin: 10px 0 0 0
+}
+#megamenu.megamenu_mobile .level_2_blog .blog_content {
+    margin: 10px 0 0 0
+}
+#megamenu.megamenu_mobile .level_2_blog .blog_btn {
+    margin: 10px 0 0 0
+}
+#megamenu.megamenu_stuck {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.3);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.3)
+}
+#megamenu.megamenu_stuck .menu_badge {
+    display: none
+}
+#megamenu .container {
+    display: flex;
+    align-items: center
+}
+#megamenu .container #logo {
+    flex: 2;
+    margin-right: 15px
+}
+#megamenu .container #logo img {
+    height: 20px;
+    width: auto;
+    object-fit: contain
+}
+#megamenu {
+    background: #000
+}
+#megamenu .level_2_wrap,
+#megamenu.megamenu_mobile .level_1_item {
+    background: #fff
+}
+
+/* End - Mega Menu */
+
 a {
   text-decoration: none;
   -webkit-transform: translate3d(0, 0, 0);

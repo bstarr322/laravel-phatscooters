@@ -123,37 +123,43 @@
 <div id="megamenu">
     <div class="container">
         <div id="logo" class="logo_main">
-            <a href="{{ config('app.shop_url') }}">
-                <img src="//cdn.shopify.com/s/files/1/1796/0271/t/11/assets/logo.png?8545831465477433450" alt="Phat Scooters" class="" />
+            <a href="http://electric.phatscooters.com/home/">
+                <img src="//cdn.shopify.com/s/files/1/1796/0271/t/11/assets/logo.png?2333941383058022498" alt="Phat Scooters" class="" />
                 <script>var pixelRatio=window.devicePixelRatio?window.devicePixelRatio:1,attr1x=$("#logo img").attr("src").replace(".png","@2x.png");$(window).on("load",function(){pixelRatio>1&&$("#logo img").attr("src",attr1x).attr("width","194px")});</script>
             </a>
         </div>
-        <h2 id="megamenu_mobile_toggle"><span>Scooters</span><i></i></h2>
+        <h2 id="megamenu_mobile_toggle"><i></i></h2>
         <ul class="level_1">
             <li class="level_1_item ">
-                <a class="level_1_link " href="{{ config('app.shop_url') }}">
+                <a class="level_1_link " href="http://electric.phatscooters.com/home/">
                 Home
                 </a>
             </li>
-            <li class="level_1_item ">
-                <a class="level_1_link active" href="{{ config('app.shop_url') }}/collections/scooters">
-                SCOOTERS
+            <li class="level_1_item level_2_small__wrap">
+                <a class="level_1_link " href="https://phatscooters.com/collections/all">
+                Shop
+                <i class="level_1_trigger"></i>
                 </a>
-            </li>
-            <li class="level_1_item ">
-                <a class="level_1_link " href="{{ config('app.shop_url') }}/collections/accessories">
-                Accessories
-                </a>
+                <ul class="level_2_wrap level_2_small">
+                    <li><a href="https://phatscooters.com/collections/scooters">Scooters</a></li>
+                    <li><a href="https://phatscooters.com/collections/accessories">Accessories</a></li>
+                    <li><a href="https://phatscooters.com/collections/apparel">Apparel</a></li>
+                </ul>
             </li>
             <li class="level_1_item ">
                 <a class="level_1_link " href="http://electric.phatscooters.com/videos/">
-                VIDEOS
+                Videos
                 </a>
             </li>
-            <li class="level_1_item ">
-                <a class="level_1_link " href="{{ config('app.shop_url') }}/pages/contact-us">
-                Contact us
+            <li class="level_1_item level_2_small__wrap">
+                <a class="level_1_link " href="#">
+                Support
+                <i class="level_1_trigger"></i>
                 </a>
+                <ul class="level_2_wrap level_2_small">
+                    <li><a href="https://electric.phatscooters.com/contact/">Contact</a></li>
+                    <li><a href="http://registration.phatscooters.com">Scooter Registration</a></li>
+                </ul>
             </li>
         </ul>
     </div>
